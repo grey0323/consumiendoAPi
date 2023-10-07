@@ -1,0 +1,38 @@
+﻿@model Consumir.ViewModels.EmpleadoViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+
+    <form asp-action="Eliminar" method="post">
+        <dl class="row">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <input asp-for="IdEmpleado" class="form-control" type="hidden" />
+            <label asp-for="Nombre" class="control-label"></label>
+            <input asp-for="Nombre" class="form-control" />
+            <span asp-validation-for="Nombre" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Apellido" class="control-label"></label>
+            <input asp-for="Apellido" class="form-control" />
+            <span asp-validation-for="Apellido" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Puesto" class="control-label"></label>
+            <input asp-for="Puesto" class="form-control" />
+            <span asp-validation-for="Puesto" class="text-danger"></span>
+        </div>
+    
+        <input type="submit" value="Delete" class="btn btn-danger" /> 
+        </dl>
+        <a asp-action="Index">Back to List</a>
+        
+    </form>
+</div>
